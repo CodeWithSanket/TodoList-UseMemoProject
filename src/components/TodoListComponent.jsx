@@ -26,6 +26,7 @@ export default function TodoListComponent() {
     }
 
     const toggleIsCompleteText = (id) => {
+        console.log(id);
         const updatedTodos = todoList.map((todo) => {
             if (todo.id === id) {
                 return { ...todo, isCompleted: !todo.isCompleted };
@@ -39,7 +40,7 @@ export default function TodoListComponent() {
 
     const MemoizedAddTodoHandler = useCallback(addTodoHandler, [inputValue, isCompleted]);
     const MemoizedSortListHandler = useCallback(sortListHandler, [todoList, setTodosList])
-    const MemoizedToggleIsComponent = useCallback(toggleIsCompleteText, [todoList, setTodosList])
+    const MemoizedToggleIsComponent = useCallback(toggleIsCompleteText, [])
 
 
 
